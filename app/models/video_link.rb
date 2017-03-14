@@ -1,0 +1,2 @@
+class VideoLink < ApplicationRecord
+end

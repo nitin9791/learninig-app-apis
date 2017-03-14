@@ -46,3 +46,35 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
+
+gem 'pg'
+gem 'pry'
+gem 'pry-rails'
+gem 'pry-byebug'
+
+#for user login 
+gem 'devise'
+gem 'devise_token_auth' # Token based authentication for Rails JSON APIs
+gem 'omniauth' # required for devise_token_auth
+gem 'hashie-forbidden_attributes', '~> 0.1.1'
+gem 'grape', '~> 0.19.1'
+gem 'grape-entity', '~> 0.6.1'
+gem 'rack-cors', '~> 0.4.1'
+gem 'kaminari', '~> 0.17.0'
+gem 'grape-kaminari', '~> 0.1.9'
+gem 'paper_trail', '~> 6.0.2'
+gem 'awesome_print', '~> 1.7.0'
+gem 'syslogger', '~> 1.6.4'
+gem 'lograge', '~> 0.4.1'
+gem 'rack-timeout', '~> 0.4.2'
+gem 'rest-client', '~> 2.0.0'
+gem 'workflow', '~> 1.2.0'
+gem 'sidekiq', '~> 4.2.9'
+gem 'sidekiq-failures', '~> 0.4.5'
+gem 'redis', '~> 3.3.3'
+gem 'redis-namespace', '~> 1.5.2'
+gem 'connection_pool', '~> 2.2'
+gem 'clockwork', '~> 2.0.0'
+gem 'daemons', '~> 1.2.4'

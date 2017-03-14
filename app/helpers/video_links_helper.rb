@@ -1,0 +1,2 @@
+module VideoLinksHelper
+end
