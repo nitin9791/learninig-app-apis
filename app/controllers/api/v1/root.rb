@@ -7,8 +7,8 @@ module API
       default_format :json
       content_type :json, 'application/json'
       mount API::V1::CategoryApi
-      mount API::V1::SubCategoryApi
-      # mount API::V1::LearningResourceApi
+      mount API::V1::LinkApi
+      #mount API::V1::LearningResourceApi
     end
   end
 end

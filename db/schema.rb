@@ -10,35 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170309074146) do
+ActiveRecord::Schema.define(version: 20170421125051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "status",     default: 0
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.index ["name"], name: "index_categories_on_name", unique: true, using: :btree
+    t.string  "name"
+    t.integer "parent_id"
+    t.integer "status"
+    t.index ["parent_id"], name: "index_categories_on_parent_id", using: :btree
     t.index ["status"], name: "index_categories_on_status", using: :btree
   end
 
-  create_table "sub_categories", force: :cascade do |t|
-    t.string   "name",        null: false
-    t.integer  "status",      null: false
-    t.integer  "category_id", null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["category_id"], name: "index_sub_categories_on_category_id", using: :btree
-    t.index ["name"], name: "index_sub_categories_on_name", unique: true, using: :btree
-    t.index ["status"], name: "index_sub_categories_on_status", using: :btree
+  create_table "links", force: :cascade do |t|
+    t.string  "name"
+    t.text    "description"
+    t.integer "status"
+    t.integer "category_id"
+    t.string  "url"
+    t.integer "link_type"
+    t.index ["category_id"], name: "index_links_on_category_id", using: :btree
+    t.index ["status"], name: "index_links_on_status", using: :btree
   end
 
-  create_table "video_links", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_foreign_key "sub_categories", "categories"
+  add_foreign_key "links", "categories"
 end

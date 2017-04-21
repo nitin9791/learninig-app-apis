@@ -1,2 +1,0 @@
-class VideoLink < ApplicationRecord
-end
